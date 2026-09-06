@@ -23,7 +23,7 @@ const PREFILLED_MESSAGE = 'नमस्ते, मुझे भारत फा�
       <div class="site-footer__columns">
         <div>
           <h4>{{ language.label('Contact', 'संपर्क करें') }}</h4>
-          <p>{{ language.label('Address: Malahiya Maphi, Sonwal, Kushinagar, Uttar Pradesh', 'पता: मलहिया माफी, सोनवल, कुशीनगर, उत्तर प्रदेश') }}</p>
+          <p>{{ language.label('Address: Malahiya Mafi, Post - Padri Piprapati, Kushinagar, Padrauna S.F., Padrauna, Kushinagar – 274304, Uttar Pradesh, India', 'पता: मलहिया माफी, पोस्ट- पडरी पिपरपाटी, कुशीनगर, पडरौना एस.एफ., पडरौना, कुशीनगर – 274304, उत्तर प्रदेश, भारत') }}</p>
           <p>{{ language.label('Phone: +91 9918884138', 'फोन: +91 9918884138') }}</p>
           <p>{{ language.label('Email: bharatfoundation.con@gmail.com', 'ईमेल: bharatfoundation.con@gmail.com') }}</p>
         </div>

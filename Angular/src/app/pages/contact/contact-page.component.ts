@@ -28,7 +28,7 @@ const PREFILLED_MESSAGE = 'नमस्ते, मुझे भारत फा�
           </div>
           <div class="contact-card">
             <strong>Address</strong>
-            <p>Malahiya Maphi, Sonwal, Kushinagar, Uttar Pradesh</p>
+            <p>Malahiya Mafi, Post - Padri Piprapati, Kushinagar, Padrauna S.F., Padrauna, Kushinagar – 274304, Uttar Pradesh, India</p>
           </div>
           <div class="contact-card">
             <strong>Phone</strong>
