@@ -1,9 +1,3 @@
-databases:
-  - name: bharat-foundation-trust-db
-    plan: free
-    databaseName: bharat_foundation_trust
-    user: bharat_admin
-
 services:
   - type: web
     name: bharat-foundation-trust-api
@@ -27,11 +21,9 @@ services:
       - key: APP_KEY
         sync: false
       - key: DB_CONNECTION
-        value: pgsql
-      - key: DATABASE_URL
-        fromDatabase:
-          name: bharat-foundation-trust-db
-          property: connectionString
+        value: sqlite
+      - key: DB_DATABASE
+        value: /var/www/html/database/database.sqlite
       - key: SESSION_DRIVER
         value: file
       - key: CACHE_DRIVER

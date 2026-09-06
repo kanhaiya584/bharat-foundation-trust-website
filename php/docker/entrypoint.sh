@@ -9,6 +9,12 @@ if [ ! -f .env ]; then
     cp .env.example .env
 fi
 
+if [ "$DB_CONNECTION" = "sqlite" ]; then
+    mkdir -p database
+    touch "${DB_DATABASE:-database/database.sqlite}"
+    chown www-data:www-data "${DB_DATABASE:-database/database.sqlite}"
+fi
+
 php artisan config:clear
 php artisan config:cache
 php artisan route:cache
