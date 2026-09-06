@@ -1,0 +1,34 @@
+# Angular
+Angular/node_modules/
+Angular/dist/
+Angular/.angular/
+Angular/*.log
+
+# PHP / Laravel
+php/vendor/
+php/node_modules/
+php/.env
+php/.env.backup
+php/.env.production
+php/.phpunit.cache
+php/.phpunit.result.cache
+php/storage/*.key
+php/storage/logs/*.log
+php/storage/framework/cache/data/*
+php/storage/framework/sessions/*
+php/storage/framework/views/*
+php/public/build/
+php/public/hot/
+php/public/storage
+php/bootstrap/cache/*.php
+!php/bootstrap/cache/.gitkeep
+php/Homestead.json
+php/Homestead.yaml
+php/auth.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
