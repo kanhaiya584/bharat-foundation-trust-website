@@ -4,7 +4,7 @@ import { LanguageService } from '../../core/services/language.service';
 
 const CONTACT_PHONE = '+919918884138';
 const CONTACT_EMAIL = 'bharatfoundation.con@gmail.com';
-const PREFILLED_MESSAGE = 'नमस्ते, मुझे भारत फाउंडेशन ट्रस्ट (Bharat Foundation Trust) के बारे में जानकारी चाहिए।';
+const PREFILLED_MESSAGE = 'नमस्ते, मुझे भरत फाउंडेशन ट्रस्ट (Bharat Foundation Trust) के बारे में जानकारी चाहिए।';
 
 @Component({
   selector: 'app-footer',
@@ -15,7 +15,7 @@ const PREFILLED_MESSAGE = 'नमस्ते, मुझे भारत फा�
       <div class="site-footer__brand">
         <div class="site-footer__logo"><img src="assets/bharat-foundation-trust-logo.png" alt="Bharat Foundation Trust logo"></div>
         <div>
-          <h3>{{ language.label('Bharat Foundation Trust', 'भारत फाउंडेशन ट्रस्ट') }}</h3>
+          <h3>{{ language.label('Bharat Foundation Trust', 'भरत फाउंडेशन ट्रस्ट') }}</h3>
           <p>{{ language.label('Education, healthcare and support for children, women and families in need.', 'जरूरतमंद बच्चों, महिलाओं और परिवारों के लिए शिक्षा, स्वास्थ्य और सहयोग।') }}</p>
         </div>
       </div>

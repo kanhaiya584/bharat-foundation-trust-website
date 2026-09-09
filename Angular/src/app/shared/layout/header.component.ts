@@ -13,7 +13,7 @@ import { LanguageService } from '../../core/services/language.service';
             <img src="assets/bharat-foundation-trust-logo.png" alt="Bharat Foundation Trust logo">
         </span>
         <span>
-          <strong>{{ language.label('Bharat Foundation Trust', 'भारत फाउंडेशन ट्रस्ट') }}</strong>
+          <strong>{{ language.label('Bharat Foundation Trust', 'भरत फाउंडेशन ट्रस्ट') }}</strong>
           <small>{{ language.label('Help • Support • Transform', 'मदद • सहयोग • परिवर्तन') }}</small>
         </span>
       </a>
@@ -28,6 +28,11 @@ import { LanguageService } from '../../core/services/language.service';
       </button>
 
       <nav class="nav" [class.nav--open]="menuOpen()">
+        <a class="nav__link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ language.label('Home', 'होम') }}</a>
+        <a class="nav__link" routerLink="/about" routerLinkActive="active" (click)="closeMenu()">{{ language.label('About Us', 'हमारे बारे में') }}</a>
+        <a class="nav__link" routerLink="/causes" routerLinkActive="active" (click)="closeMenu()">{{ language.label('Our Work', 'हमारा कार्य') }}</a>
+        <a class="nav__link" routerLink="/impact" routerLinkActive="active" (click)="closeMenu()">{{ language.label('Impact', 'प्रभाव') }}</a>
+        <a class="nav__link" routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">{{ language.label('Contact', 'संपर्क') }}</a>
         <a class="nav__login" routerLink="/login" (click)="closeMenu()">{{ language.label('Login', 'लॉगिन') }}</a>
       </nav>
       <a class="btn btn-primary nav__donate" routerLink="/donate">{{ language.label('Donate Now', 'दान करें') }}</a>
@@ -76,6 +81,7 @@ import { LanguageService } from '../../core/services/language.service';
       .language-toggle { order: 0; margin-left: auto; color: #0d4b87; background: #fff; border-color: #dce8f1; font-size: .72rem; }
       .language-toggle span.active { background: #11984a; color: #fff; }
       .nav__donate { display: none; }
+      .nav__link { display: none; }
       .nav-toggle { order: 2; width: 42px; height: 42px; background: transparent; box-shadow: none; }
       .nav-toggle span { width: 26px; height: 3px; background: #0d4b87; }
       .nav { top: 100%; left: 12px; right: 12px; background: #0d2d5a; }

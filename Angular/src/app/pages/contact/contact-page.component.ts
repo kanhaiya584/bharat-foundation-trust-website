@@ -5,7 +5,7 @@ import { PageHeroComponent } from '../../shared/ui/page-hero.component';
 import { ContactApiService } from '../../core/services/api.service';
 import { SeoService } from '../../core/services/seo.service';
 
-const PREFILLED_MESSAGE = 'नमस्ते, मुझे भारत फाउंडेशन ट्रस्ट (Bharat Foundation Trust) के बारे में जानकारी चाहिए।';
+const PREFILLED_MESSAGE = 'नमस्ते, मुझे भरत फाउंडेशन ट्रस्ट (Bharat Foundation Trust) के बारे में जानकारी चाहिए।';
 
 @Component({
   selector: 'app-contact-page',

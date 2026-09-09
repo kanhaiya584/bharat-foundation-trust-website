@@ -7,7 +7,7 @@ export class LanguageService {
   private readonly storageKey = 'bharat-foundation-language';
   readonly language = signal<SiteLanguage>(this.readLanguage());
   private readonly dictionary: Record<string, string> = {
-    'Home': 'होम', 'About Us': 'बारे में', 'Our Work': 'हमारा कार्य', 'Donate': 'दान', 'Donate Now': 'अभी दान करें', 'Impact': 'प्रभाव', 'Contact': 'संपर्क', 'Login': 'लॉगिन', 'Health': 'स्वास्थ्य', 'Bharat Foundation Trust': 'भारत फाउंडेशन ट्रस्ट',
+    'Home': 'होम', 'About Us': 'बारे में', 'Our Work': 'हमारा कार्य', 'Donate': 'दान', 'Donate Now': 'अभी दान करें', 'Impact': 'प्रभाव', 'Contact': 'संपर्क', 'Login': 'लॉगिन', 'Health': 'स्वास्थ्य', 'Bharat Foundation Trust': 'भरत फाउंडेशन ट्रस्ट',
     'About Us / बारे में': 'बारे में', 'Our Work / हमारे काम': 'हमारा कार्य', 'Donate Now / दान करें': 'अभी दान करें', 'Home Page / मुख पृष्ठ': 'होम',
     'Small Contributions Create Big Changes': 'छोटा योगदान, बड़ा बदलाव', 'Support our mission to build a healthier, educated and more inclusive future for everyone in need.': 'जरूरतमंद लोगों के लिए स्वस्थ, शिक्षित और समावेशी भविष्य बनाने के हमारे मिशन का साथ दें।',
     'Watch Video': 'वीडियो देखें', 'Our Focus Areas': 'हमारे प्रमुख क्षेत्र', 'We work where the need is greatest': 'जहाँ जरूरत सबसे अधिक है, हम वहाँ काम करते हैं', 'Programs that combine dignity, continuity and measurable outcomes across communities.': 'ऐसे कार्यक्रम जो समुदायों में गरिमा, निरंतरता और मापने योग्य परिणाम लाते हैं।', 'Be a Part of the Change': 'बदलाव का हिस्सा बनें', 'One donation can bring education, care and hope to a family.': 'एक दान किसी परिवार तक शिक्षा, देखभाल और उम्मीद पहुँचा सकता है।', 'Join us with a secure contribution and make your support visible in the lives we serve.': 'सुरक्षित योगदान के साथ जुड़ें और जिन लोगों की हम सेवा करते हैं, उनके जीवन में अपना सहयोग देखें।',
@@ -18,7 +18,7 @@ export class LanguageService {
     'Donation / Impact': 'दान / प्रभाव', 'Donation Impact': 'दान का प्रभाव', 'See the outcome of your support in a public, transparent way.': 'अपने सहयोग का परिणाम सार्वजनिक और पारदर्शी रूप से देखें।', 'Recent Successful Donations': 'हाल के सफल दान', 'Public impact snapshot': 'सार्वजनिक प्रभाव की झलक', 'Only masked donor names and safe public data are shown here.': 'यहाँ केवल छुपे हुए दाता नाम और सुरक्षित सार्वजनिक जानकारी दिखाई जाती है।', 'Payment Unsuccessful': 'भुगतान सफल नहीं हुआ', 'Your payment could not be completed. Please try again.': 'आपका भुगतान पूरा नहीं हो सका। कृपया फिर प्रयास करें।', 'Try Again': 'फिर प्रयास करें', 'Back to Home': 'होम पर जाएँ', 'Donation Successful': 'दान सफल रहा', 'Thank you for supporting our cause.': 'हमारे कार्य का सहयोग करने के लिए धन्यवाद।', 'Download Receipt': 'रसीद डाउनलोड करें',
     'Secure Access': 'सुरक्षित प्रवेश', 'Admin only access for authorized trust personnel.': 'केवल अधिकृत ट्रस्ट कर्मचारियों के लिए प्रवेश।', 'Username / Email': 'यूज़रनेम / ईमेल', 'Password': 'पासवर्ड', 'Enter email or username': 'ईमेल या यूज़रनेम दर्ज करें', 'Enter password': 'पासवर्ड दर्ज करें', 'Only authorized personnel can access this area. No public registration is available.': 'इस क्षेत्र में केवल अधिकृत कर्मचारी प्रवेश कर सकते हैं। सार्वजनिक पंजीकरण उपलब्ध नहीं है।', 'This dashboard is for authorized users only. Please log in to continue.': 'यह डैशबोर्ड केवल अधिकृत उपयोगकर्ताओं के लिए है। जारी रखने के लिए लॉगिन करें।',
     'Dashboard': 'डैशबोर्ड', 'Recent Donations': 'हाल के दान', 'A simple donation dashboard for authorized trust personnel.': 'अधिकृत ट्रस्ट कर्मचारियों के लिए सरल दान डैशबोर्ड।', 'Open Public Donate Page': 'सार्वजनिक दान पेज खोलें', 'Search': 'खोजें', 'Name, email, payment ID': 'नाम, ईमेल, भुगतान आईडी', 'Status': 'स्थिति', 'All': 'सभी', 'Pending': 'लंबित', 'Success': 'सफल', 'Failed': 'विफल', 'Refunded': 'वापस किया गया', 'Apply Filters': 'फ़िल्टर लगाएँ', 'Reset': 'रीसेट', 'Export CSV': 'CSV निर्यात करें', 'Logout': 'लॉगआउट', 'Date': 'तारीख', 'Amount': 'राशि', 'Payment ID': 'भुगतान आईडी', 'Prev': 'पिछला', 'Next': 'अगला', 'Page': 'पृष्ठ',
-    'Quick Links': 'त्वरित लिंक', 'Connect': 'हमसे जुड़ें', 'Address': 'पता', 'Phone': 'फोन', 'Office Hours': 'कार्यालय समय', 'Send a Message': 'संदेश भेजें', 'Tell us how we can help': 'बताइए हम आपकी कैसे मदद कर सकते हैं', 'Name': 'नाम', 'Message': 'संदेश', 'Submit': 'जमा करें', 'Privacy Policy': 'गोपनीयता नीति', 'Terms & Conditions': 'नियम एवं शर्तें', '© 2026 Bharat Foundation Trust': '© 2026 भारत फाउंडेशन ट्रस्ट'
+    'Quick Links': 'त्वरित लिंक', 'Connect': 'हमसे जुड़ें', 'Address': 'पता', 'Phone': 'फोन', 'Office Hours': 'कार्यालय समय', 'Send a Message': 'संदेश भेजें', 'Tell us how we can help': 'बताइए हम आपकी कैसे मदद कर सकते हैं', 'Name': 'नाम', 'Message': 'संदेश', 'Submit': 'जमा करें', 'Privacy Policy': 'गोपनीयता नीति', 'Terms & Conditions': 'नियम एवं शर्तें', '© 2026 Bharat Foundation Trust': '© 2026 भरत फाउंडेशन ट्रस्ट'
   };
   private readonly workDictionary: Record<string, string> = {
     'Donation Amount': 'दान की राशि',
@@ -41,8 +41,8 @@ export class LanguageService {
     'Organising free medical camps to make health and medical support accessible to needy people.': 'जरूरतमंद लोगों तक स्वास्थ्य एवं चिकित्सा सहायता पहुँचाने के उद्देश्य से निःशुल्क चिकित्सा शिविरों का आयोजन।',
     'An effort to provide economic and social support to people and families according to their needs.': 'गरीब एवं जरूरतमंद लोगों और परिवारों को उनकी आवश्यकता के अनुसार आर्थिक एवं सामाजिक सहायता प्रदान करने का प्रयास।',
     'An effort to provide possible support for the marriages of daughters from families in need.': 'जरूरतमंद परिवारों की बेटियों के विवाह में यथासंभव सहयोग प्रदान करने का प्रयास।',
-    'Bharat Foundation Trust is a non-profit organization working for the upliftment of underserved communities. हमारी संस्था शिक्षा, स्वास्थ्य, महिला एवं बाल कल्याण और जरूरतमंद परिवारों के लिए सहयोग करती है।': 'भारत फाउंडेशन ट्रस्ट का उद्देश्य समाज के उन लोगों तक सहायता और अवसर पहुँचाना है जिन्हें इसकी सबसे अधिक आवश्यकता है। ट्रस्ट शिक्षा, स्वास्थ्य, कौशल विकास और सामाजिक सहायता के माध्यम से सकारात्मक बदलाव लाने का प्रयास करता है।',
-    'Bharat Foundation Trust is a non-profit organization working for the upliftment of underserved communities.': 'भारत फाउंडेशन ट्रस्ट का उद्देश्य समाज के उन लोगों तक सहायता और अवसर पहुँचाना है जिन्हें इसकी सबसे अधिक आवश्यकता है।',
+    'Bharat Foundation Trust is a non-profit organization working for the upliftment of underserved communities. हमारी संस्था शिक्षा, स्वास्थ्य, महिला एवं बाल कल्याण और जरूरतमंद परिवारों के लिए सहयोग करती है।': 'भरत फाउंडेशन ट्रस्ट का उद्देश्य समाज के उन लोगों तक सहायता और अवसर पहुँचाना है जिन्हें इसकी सबसे अधिक आवश्यकता है। ट्रस्ट शिक्षा, स्वास्थ्य, कौशल विकास और सामाजिक सहायता के माध्यम से सकारात्मक बदलाव लाने का प्रयास करता है।',
+    'Bharat Foundation Trust is a non-profit organization working for the upliftment of underserved communities.': 'भरत फाउंडेशन ट्रस्ट का उद्देश्य समाज के उन लोगों तक सहायता और अवसर पहुँचाना है जिन्हें इसकी सबसे अधिक आवश्यकता है।',
     'Reach out to learn more, coordinate support or ask about donations.': 'हमारे कार्य, सहयोग या दान के बारे में जानकारी के लिए हमसे संपर्क करें।',
     'We are here to help': 'हम सहायता के लिए यहाँ हैं',
     'Google Maps embed area': 'गूगल मैप क्षेत्र',
@@ -56,6 +56,26 @@ export class LanguageService {
     'Webhook handled for duplicate safety': 'डुप्लीकेट भुगतान से सुरक्षा के लिए वेबहुक संभाला जाता है',
     'No secret keys exposed to Angular': 'गुप्त कुंजियाँ Angular में उजागर नहीं होतीं',
     'Please fill the required donor details and a valid amount.': 'कृपया दाता की सभी आवश्यक जानकारी और सही राशि भरें।',
+    'Payment Method': 'भुगतान का तरीका',
+    'Choose your payment method': 'अपना भुगतान तरीका चुनें',
+    'Choose Payment Method': 'भुगतान का तरीका चुनें',
+    'UPI ID': 'यूपीआई आईडी',
+    'Copy': 'कॉपी करें',
+    'Copied!': 'कॉपी हो गया!',
+    'Copy this UPI ID and pay using any UPI app (Google Pay, PhonePe, Paytm etc.)': 'इस यूपीआई आईडी को कॉपी करें और किसी भी यूपीआई ऐप (गूगल पे, फोनपे, पेटीएम आदि) से भुगतान करें।',
+    'Scan this QR code with any UPI app to pay instantly.': 'तुरंत भुगतान के लिए किसी भी यूपीआई ऐप से इस क्यूआर कोड को स्कैन करें।',
+    'Account Name': 'खाता नाम',
+    'Account Number': 'खाता संख्या',
+    'IFSC Code': 'आईएफएससी कोड',
+    'Bank & Branch': 'बैंक व शाखा',
+    'Transfer the amount to this account and keep the reference number for your receipt.': 'इस खाते में राशि ट्रांसफर करें और रसीद के लिए संदर्भ संख्या सुरक्षित रखें।',
+    'Online': 'ऑनलाइन',
+    'QR Code': 'क्यूआर कोड',
+    'Bank Transfer': 'बैंक ट्रांसफर',
+    'Card, Net Banking & Wallets': 'कार्ड, नेट बैंकिंग व वॉलेट',
+    'Pay using any UPI app': 'किसी भी यूपीआई ऐप से भुगतान करें',
+    'Scan & pay instantly': 'स्कैन करके तुरंत भुगतान करें',
+    'Secure & direct bank transfer': 'सुरक्षित एवं सीधा बैंक ट्रांसफर',
     'Unable to prepare Razorpay checkout. Please try again in a moment.': 'Razorpay भुगतान तैयार नहीं हो सका। कृपया थोड़ी देर बाद फिर प्रयास करें।',
     'Razorpay checkout script could not be loaded.': 'Razorpay भुगतान स्क्रिप्ट लोड नहीं हो सकी।',
   };
