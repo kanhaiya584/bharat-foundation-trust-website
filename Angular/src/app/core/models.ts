@@ -20,19 +20,6 @@ export interface Trustee {
   imageUrl: string;
 }
 
-export interface DonationSummary {
-  totalDonations: number;
-  totalDonors: number;
-  successfulPayments: number;
-  failedPayments: number;
-  beneficiariesHelped: number;
-  recentPublicDonations: Array<{
-    name: string;
-    amount: number;
-    createdAt: string;
-  }>;
-}
-
 export interface DonationOrderResponse {
   orderId: string;
   amount: number;

@@ -6,7 +6,6 @@ import {
   DashboardDonation,
   DashboardSummary,
   DonationOrderResponse,
-  DonationSummary,
   DonationVerificationResponse,
   ContactRequest,
 } from '../models';
@@ -31,13 +30,6 @@ export class ApiService {
 
   download(path: string, headers?: HttpHeaders): Observable<Blob> {
     return this.http.get(`${this.baseUrl}${path}`, { headers, responseType: 'blob' });
-  }
-}
-
-@Injectable({ providedIn: 'root' })
-export class PublicApiService extends ApiService {
-  impact(): Observable<ApiResponse<DonationSummary>> {
-    return this.get<ApiResponse<DonationSummary>>('/public/impact');
   }
 }
 
@@ -68,8 +60,8 @@ export class DonationApiService extends ApiService {
 
 @Injectable({ providedIn: 'root' })
 export class AuthApiService extends ApiService {
-  login(payload: { login: string; password: string }): Observable<ApiResponse<{ token: string; user: { name: string; email: string } }>> {
-    return this.post<ApiResponse<{ token: string; user: { name: string; email: string } }>>('/auth/login', payload);
+  login(payload: { password: string }): Observable<ApiResponse<{ token: string }>> {
+    return this.post<ApiResponse<{ token: string }>>('/auth/login', payload);
   }
 
   logout(): Observable<ApiResponse<null>> {

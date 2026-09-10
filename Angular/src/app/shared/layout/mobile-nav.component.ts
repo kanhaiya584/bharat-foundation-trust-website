@@ -1,7 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LanguageService } from '../../core/services/language.service';
-import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-mobile-nav',
@@ -30,18 +29,14 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class MobileNavComponent {
   readonly language = inject(LanguageService);
-  private readonly auth = inject(AuthService);
 
   readonly items = [
     { route: '/', en: 'Home', hi: 'होम', icon: '⌂' },
     { route: '/about', en: 'About', hi: 'अबाउट', icon: 'ⓘ' },
     { route: '/causes', en: 'Our Work', hi: 'कार्य', icon: '⌁' },
     { route: '/donate', en: 'Donate', hi: 'दान', icon: '＋' },
-    { route: '/impact', en: 'Impact', hi: 'प्रभाव', icon: '◉' },
     { route: '/contact', en: 'Contact', hi: 'संपर्क', icon: '☎' },
   ];
 
-  readonly visibleItems = computed(() =>
-    this.auth.isAuthenticated() ? this.items : this.items.filter((item) => item.route !== '/impact')
-  );
+  readonly visibleItems = computed(() => this.items);
 }

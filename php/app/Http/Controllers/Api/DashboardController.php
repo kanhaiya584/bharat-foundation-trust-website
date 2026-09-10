@@ -10,10 +10,8 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class DashboardController extends ApiController
 {
-    public function summary(Request $request): JsonResponse
+    public function summary(): JsonResponse
     {
-        $this->authorizeAdmin($request);
-
         $success = Donation::query()->where('status', 'success');
 
         return $this->success([
@@ -26,8 +24,6 @@ class DashboardController extends ApiController
 
     public function donations(Request $request): JsonResponse
     {
-        $this->authorizeAdmin($request);
-
         $page = max(1, (int) $request->integer('page', 1));
         $perPage = min(25, max(5, (int) $request->integer('per_page', 10)));
 
@@ -46,8 +42,6 @@ class DashboardController extends ApiController
 
     public function export(Request $request): StreamedResponse|JsonResponse
     {
-        $this->authorizeAdmin($request);
-
         $rows = $this->filteredDonations($request)
             ->orderByDesc('created_at')
             ->get()
@@ -106,10 +100,5 @@ class DashboardController extends ApiController
             'status' => $donation->status,
             'createdAt' => $donation->created_at?->toIso8601String(),
         ];
-    }
-
-    private function authorizeAdmin(Request $request): void
-    {
-        abort_unless($request->user()?->is_admin, 403, 'Unauthorized access.');
     }
 }

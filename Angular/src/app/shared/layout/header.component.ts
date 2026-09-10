@@ -31,7 +31,6 @@ import { LanguageService } from '../../core/services/language.service';
         <a class="nav__link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ language.label('Home', 'होम') }}</a>
         <a class="nav__link" routerLink="/about" routerLinkActive="active" (click)="closeMenu()">{{ language.label('About Us', 'हमारे बारे में') }}</a>
         <a class="nav__link" routerLink="/causes" routerLinkActive="active" (click)="closeMenu()">{{ language.label('Our Work', 'हमारा कार्य') }}</a>
-        <a class="nav__link" routerLink="/impact" routerLinkActive="active" (click)="closeMenu()">{{ language.label('Impact', 'प्रभाव') }}</a>
         <a class="nav__link" routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">{{ language.label('Contact', 'संपर्क') }}</a>
         <a class="nav__login" routerLink="/login" (click)="closeMenu()">{{ language.label('Login', 'लॉगिन') }}</a>
       </nav>

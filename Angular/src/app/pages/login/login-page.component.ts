@@ -23,10 +23,6 @@ import { SeoService } from '../../core/services/seo.service';
 
         <form [formGroup]="form" (ngSubmit)="submit()" class="login-form">
           <label class="field">
-            <span>Username / Email</span>
-            <input type="text" formControlName="login" placeholder="Enter email or username">
-          </label>
-          <label class="field">
             <span>Password</span>
             <input type="password" formControlName="password" placeholder="Enter password">
           </label>
@@ -76,8 +72,7 @@ export class LoginPageComponent {
   error = '';
 
   form = this.fb.nonNullable.group({
-    login: ['', [Validators.required]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    password: ['', [Validators.required]],
   });
 
   constructor() {
@@ -93,8 +88,8 @@ export class LoginPageComponent {
     }
 
     this.loading = true;
-    const { login, password } = this.form.getRawValue();
-    this.auth.login(login, password).subscribe({
+    const { password } = this.form.getRawValue();
+    this.auth.login(password).subscribe({
       next: () => {
         this.loading = false;
         void this.router.navigate(['/dashboard']);

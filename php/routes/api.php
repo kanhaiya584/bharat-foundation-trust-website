@@ -4,18 +4,13 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\DonationController;
-use App\Http\Controllers\Api\PublicController;
 use Illuminate\Support\Facades\Route;
-
-Route::prefix('public')->group(function () {
-    Route::get('/impact', [PublicController::class, 'impact']);
-});
 
 Route::middleware('throttle:15,1')->group(function () {
     Route::post('/auth/login', [AuthController::class, 'login']);
 });
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware('admin.token')->group(function () {
     Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::get('/dashboard/summary', [DashboardController::class, 'summary']);
     Route::get('/dashboard/donations', [DashboardController::class, 'donations']);

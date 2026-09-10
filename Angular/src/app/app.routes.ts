@@ -4,7 +4,6 @@ import { HomePageComponent } from './pages/home/home-page.component';
 import { AboutPageComponent } from './pages/about/about-page.component';
 import { CausesPageComponent } from './pages/causes/causes-page.component';
 import { DonatePageComponent } from './pages/donate/donate-page.component';
-import { ImpactPageComponent } from './pages/impact/impact-page.component';
 import { ContactPageComponent } from './pages/contact/contact-page.component';
 import { LoginPageComponent } from './pages/login/login-page.component';
 import { DashboardPageComponent } from './pages/dashboard/dashboard-page.component';
@@ -16,7 +15,6 @@ export const routes: Routes = [
   { path: 'about', component: AboutPageComponent },
   { path: 'causes', component: CausesPageComponent },
   { path: 'donate', component: DonatePageComponent },
-  { path: 'impact', component: ImpactPageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'dashboard', component: DashboardPageComponent, canActivate: [authGuard] },

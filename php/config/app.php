@@ -185,4 +185,16 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Dashboard Password
+    |--------------------------------------------------------------------------
+    |
+    | Single shared password for trust staff to access the admin dashboard.
+    | No usernames/accounts are used; set this in the ".env" file.
+    |
+    */
+
+    'admin_password' => env('ADMIN_PASSWORD', 'Trust@12345'),
+
 ];

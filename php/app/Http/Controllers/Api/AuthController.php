@@ -3,63 +3,42 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\LoginRequest;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Throwable;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 
 class AuthController extends ApiController
 {
+    private const TOKEN_TTL_HOURS = 12;
+
     public function login(LoginRequest $request): JsonResponse
     {
-        $login = $request->string('login')->toString();
         $password = $request->string('password')->toString();
 
-        try {
-            $user = User::query()
-                ->where('email', $login)
-                ->orWhere('name', $login)
-                ->first();
-        } catch (Throwable) {
-            $user = null;
+        if (! hash_equals((string) config('app.admin_password'), $password)) {
+            return $this->failure('Invalid password.', 422);
         }
 
-        if (! $user && app()->environment('testing')) {
-            $adminLogin = env('ADMIN_EMAIL', 'admin@yourtrustname.org');
-            $adminName = env('ADMIN_NAME', 'Trust Admin');
-            $adminPassword = env('ADMIN_PASSWORD', 'Trust@12345');
+        $token = Str::random(64);
+        Cache::put($this->cacheKey($token), true, now()->addHours(self::TOKEN_TTL_HOURS));
 
-            if (($login === $adminLogin || $login === $adminName) && $password === $adminPassword) {
-                return $this->success([
-                    'token' => 'testing-token',
-                    'user' => [
-                        'name' => $adminName,
-                        'email' => $adminLogin,
-                    ],
-                ], 'Login successful.');
-            }
-        }
-
-        if (! $user || ! $user->is_admin || ! Hash::check($password, $user->password)) {
-            return $this->failure('Invalid credentials.', 422);
-        }
-
-        $token = $user->createToken('trust-admin')->plainTextToken;
-
-        return $this->success([
-            'token' => $token,
-            'user' => [
-                'name' => $user->name,
-                'email' => $user->email,
-            ],
-        ], 'Login successful.');
+        return $this->success(['token' => $token], 'Login successful.');
     }
 
     public function logout(Request $request): JsonResponse
     {
-        $request->user()?->currentAccessToken()?->delete();
+        $token = $request->bearerToken();
+
+        if ($token) {
+            Cache::forget($this->cacheKey($token));
+        }
 
         return $this->success(null, 'Logged out successfully.');
+    }
+
+    private function cacheKey(string $token): string
+    {
+        return 'admin_token:' . hash('sha256', $token);
     }
 }

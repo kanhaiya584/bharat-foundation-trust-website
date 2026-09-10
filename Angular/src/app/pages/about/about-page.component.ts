@@ -12,8 +12,7 @@ import { SeoService } from '../../core/services/seo.service';
   imports: [NgFor, RouterLink, PageHeroComponent, TrusteeCardComponent],
   template: `
     <app-page-hero
-      eyebrow="बारे में"
-      title="About Us"
+      title="A responsible step toward service, support, and positive change."
       subtitle="A transparent trust working on education, healthcare, women & child welfare, and community support."
       imageUrl="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80"
     />
@@ -28,11 +27,13 @@ import { SeoService } from '../../core/services/seo.service';
 
       <div class="story__grid surface">
         <div class="story__text">
-          <p>Bharat Foundation Trust is a non-profit organization working for the upliftment of underserved communities. हमारी संस्था शिक्षा, स्वास्थ्य, महिला एवं बाल कल्याण और जरूरतमंद परिवारों के लिए सहयोग करती है।</p>
-          <p>Our approach keeps donations visible, programs focused and beneficiaries at the center of every decision. We work with volunteers, local partners and donors who want to see transparent outcomes.</p>
+          <p class="story__lead">Bharat Foundation Trust's purpose is to bring support and opportunities to those in society who need it most.</p>
+          <p class="story__note">The trust works through <strong class="story__accent">education, healthcare, skill development and social support</strong> to bring about positive change.</p>
+          <p class="story__lead">Our approach keeps donations transparent, programs focused and beneficiaries at the center of every decision.</p>
+          <p class="story__note">We work with <strong class="story__accent">volunteers, local partners</strong> and donors who want to see transparent outcomes.</p>
           <a class="btn btn-primary" routerLink="/donate">Donate Now</a>
         </div>
-        <div class="story__image" aria-hidden="true"></div>
+        <img class="story__image" src="assets/about-poster.png" alt="Bharat Foundation Trust - सेवा, संवेदना, सशक्त समाज" />
       </div>
     </section>
 
@@ -74,7 +75,10 @@ import { SeoService } from '../../core/services/seo.service';
     .story__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px; }
     .story__text { display: flex; flex-direction: column; gap: 14px; padding: 12px; }
     .story__text p { margin: 0; color: var(--muted); line-height: 1.75; font-size: 1.05rem; }
-    .story__image { min-height: 320px; border-radius: 24px; background: linear-gradient(180deg, rgba(7,28,59,.15), rgba(7,28,59,.35)), url('https://images.unsplash.com/photo-1559027615-cdcb9902d4a3?auto=format&fit=crop&w=1200&q=80') center/cover; }
+    .story__lead { color: var(--navy-2); font-weight: 700; font-size: 1.18rem; }
+    .story__note { font-size: 1rem; }
+    .story__accent { color: #0f7b38; font-weight: 700; }
+    .story__image { width: 100%; aspect-ratio: 3 / 2; border-radius: 24px; object-fit: contain; background: #fff; align-self: center; }
     .values-grid, .trustees-grid { display: grid; gap: 18px; }
     .values-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .trustees-grid { grid-template-columns: minmax(0, 300px); justify-content: center; }

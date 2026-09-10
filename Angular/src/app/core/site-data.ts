@@ -5,7 +5,6 @@ export const navLinks = [
   { label: 'About Us', route: '/about' },
   { label: 'Our Work', route: '/causes' },
   { label: 'Donate', route: '/donate' },
-  { label: 'Impact', route: '/impact' },
   { label: 'Contact', route: '/contact' },
 ];
 
